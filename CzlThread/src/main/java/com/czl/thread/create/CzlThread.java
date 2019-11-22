@@ -1,4 +1,4 @@
-package com.czl.thread;
+package com.czl.thread.create;
 
 public class CzlThread extends Thread {
     @Override

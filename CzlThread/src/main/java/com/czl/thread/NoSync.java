@@ -9,11 +9,11 @@ public class NoSync implements Runnable {
 
     @Override
     public void run() {
-        add();
+//        noSynAll();
+        synAdd();
     }
 
-    public static void add(){
-//    public synchronized static void add(){
+    public static void noSynAdd(){
 //        synchronized (NoSync.class){
             try {
                 Thread.sleep(1);
@@ -24,9 +24,22 @@ public class NoSync implements Runnable {
 //        }
     }
 
+    /**
+     * 锁定方法
+     */
+    public synchronized static void synAdd(){
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        count++;
+    }
+
     public static void main(String[] args) throws Exception {
+        System.out.println("count-start:"+count);
         for(int i=0;i<5000;i++){
-            new Thread(()->NoSync.add()).start();
+            new Thread(new NoSync()).start();
         }
 
         for (int i=1;i<=10;i++){
