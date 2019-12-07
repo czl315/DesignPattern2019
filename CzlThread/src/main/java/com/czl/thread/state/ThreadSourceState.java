@@ -34,7 +34,7 @@ public class ThreadSourceState {
      * <li>{@link #TIMED_WAITING}<br>
      *     A thread that is waiting for another thread to perform an action
      *     for up to a specified waiting time is in this state.
-     *     TIMED_WAITING设定时间的等待：在指定的等待时间内等待另一个线程执行操作*的线程处于这种状态。
+     *     TIMED_WAITING设定时间的等待：在指定的等待时间内等待另一个线程执行操作的线程处于这种状态。
      *     </li>
      * <li>{@link #TERMINATED}<br>
      *     A thread that has exited is in this state.
@@ -46,7 +46,7 @@ public class ThreadSourceState {
      * A thread can be in only one state at a given point in time.
      * These states are virtual machine states which do not reflect
      * any operating system thread states.
-     * 在给定的时间点上，线程只能处于一种状态。*这些状态是不反映*任何操作系统线程状态的虚拟机状态。
+     * 在给定的时间点上，线程只能处于一种状态。这些状态是不反映任何操作系统线程状态的虚拟机状态。
      *
      * @since   1.5
 //     * @see #getState

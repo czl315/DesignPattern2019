@@ -8,8 +8,14 @@ import java.util.concurrent.Callable;
  */
 public class CzlCallable implements Callable {
     @Override
-    public Object call() throws Exception {
+    public String call() throws Exception {
+        String rs = "默认call返回";
         System.out.println("[实现Callable]czl线程名称："+Thread.currentThread().getName());
-        return Thread.currentThread().getName();
+        return rs;
+    }
+
+    public static void main(String[] args) throws Exception {
+        Callable callable = new CzlCallable();
+        System.out.println((String) (callable.call()));
     }
 }
